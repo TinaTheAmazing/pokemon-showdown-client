@@ -13,6 +13,193 @@ import { type AnimTable, BattleOtherAnims } from './battle-animations';
 import { Config } from './client-main';
 
 export const BattleMoveAnims: AnimTable = {
+	starfallcrash: {
+		anim(scene, [attacker, defender]) {
+			BattleOtherAnims.shake.anim(scene, [attacker]);
+			scene.showEffect('rainbow', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 0,
+				opacity: 1,
+				time: 0,
+			}, {
+				x: attacker.x - 50,
+				y: attacker.y - 50,
+				scale: 2,
+				opacity: 0,
+				time: 300,
+			}, 'ballistic');
+			scene.showEffect('rainbow', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 0,
+				opacity: 1,
+				time: 150,
+			}, {
+				x: attacker.x + 60,
+				y: attacker.y - 50,
+				scale: 2,
+				opacity: 0,
+				time: 450,
+			}, 'ballistic');
+			scene.showEffect('rainbow', {
+				x: attacker.x,
+				y: attacker.y,
+				z: attacker.z,
+				scale: 0,
+				opacity: 1,
+				time: 300,
+			BattleOtherAnims.shake.anim(scene, [defender]);
+			scene.showEffect('fireball', {
+				x: defender.x + 50,
+				y: defender.y,
+				z: defender.z,
+				scale: 0.5,
+				opacity: 1,
+			}, {
+				x: defender.x - 50,
+				scale: 1,
+				opacity: 0.4,
+				time: 200,
+			}, 'ballistic2', 'fade');
+			scene.showEffect('bluefireball', {
+				x: defender.x - 50,
+				y: defender.y,
+				z: defender.z,
+				scale: 0.5,
+				opacity: 1,
+			}, {
+				x: defender.x + 50,
+				scale: 1,
+				opacity: 0.4,
+				time: 200,
+			}, 'ballistic2back', 'fade');
+			scene.showEffect('fireball', {
+				x: defender.x + 50,
+				y: defender.y,
+				z: defender.z,
+				scale: 0.5,
+				opacity: 1,
+				time: 200,
+			}, {
+				x: defender.x - 50,
+				scale: 1,
+				opacity: 0.4,
+				time: 400,
+			}, 'ballistic2', 'fade');
+			scene.showEffect('bluefireball', {
+				x: defender.x - 50,
+				y: defender.y,
+				z: defender.z,
+				scale: 0.5,
+				opacity: 1,
+				time: 200,
+			}, {
+				x: defender.x + 50,
+				scale: 1,
+				opacity: 0.4,
+				time: 400,
+			}, 'ballistic2back', 'fade');
+			scene.showEffect('fireball', {
+				x: defender.x + 50,
+				y: defender.y,
+				z: defender.z,
+				scale: 0.5,
+				opacity: 1,
+				time: 400,
+			}, {
+				x: defender.x - 50,
+				scale: 1,
+				opacity: 0.4,
+				time: 600,
+			}, 'ballistic2', 'fade');
+			scene.showEffect('bluefireball', {
+				x: defender.x - 50,
+				y: defender.y,
+				z: defender.z,
+				scale: 0.5,
+				opacity: 1,
+				time: 400,
+			}, {
+				x: defender.x + 50,
+				scale: 1,
+				opacity: 0.4,
+				time: 600,
+			}, 'ballistic2Back', 'fade');
+				x: attacker.x + 10,
+				y: attacker.y - 60,
+				scale: 2,
+				opacity: 0,
+				time: 600,
+			scene.showEffect('flareball', {
+				x: defender.x + 15,
+				y: defender.y + 70,
+				z: defender.z,
+				opacity: 0,
+				scale: 1,
+			}, {
+				y: defender.y - 20,
+				opacity: 1,
+				xscale: 2,
+				time: 300,
+			}, 'linear', 'explode');
+			scene.showEffect('flareball', {
+				x: defender.x + 30,
+				y: defender.y + 70,
+				z: defender.z,
+				opacity: 0,
+				scale: 1,
+				time: 100,
+			}, {
+				y: defender.y - 20,
+				opacity: 1,
+				xscale: 2,
+				time: 400,
+			}, 'linear', 'explode');
+			scene.showEffect('flareball', {
+				x: defender.x - 30,
+				y: defender.y + 70,
+				z: defender.z,
+				opacity: 0,
+				scale: 1,
+				time: 200,
+			}, {
+				y: defender.y - 20,
+				opacity: 1,
+				xscale: 2,
+				time: 500,
+			}, 'linear', 'explode');
+			scene.showEffect('flareball', {
+				x: defender.x,
+				y: defender.y + 70,
+				z: defender.z,
+				opacity: 0,
+				scale: 1,
+				time: 300,
+			}, {
+				y: defender.y - 20,
+				opacity: 1,
+				xscale: 2,
+				time: 600,
+			}, 'linear', 'explode');
+			scene.showEffect('flareball', {
+				x: defender.x - 15,
+				y: defender.y + 70,
+				z: defender.z,
+				opacity: 0,
+				scale: 1,
+				time: 400,
+			}, {
+				y: defender.y - 20,
+				opacity: 1,
+				xscale: 2,
+				time: 700,
+			}, 'linear', 'explode');
+			}, 'ballistic');
+		},
+	},
 	taunt: {
 		anim(scene, [attacker, defender]) {
 			BattleOtherAnims.dance.anim(scene, [attacker, defender]);
